@@ -8,6 +8,7 @@ use Gember\EventSourcing\Util\Messaging\MessageBus\EventBus;
 use Gember\EventSourcing\Util\Messaging\MessageBus\HandlingMessageFailedException;
 use Symfony\Component\Messenger\Exception\ExceptionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Override;
 
 final readonly class SymfonyEventBus implements EventBus
 {
@@ -15,6 +16,7 @@ final readonly class SymfonyEventBus implements EventBus
         private MessageBusInterface $eventBus,
     ) {}
 
+    #[Override]
     public function handle(object $event): void
     {
         try {
