@@ -1,6 +1,6 @@
 {
     "name": "gember/message-bus-symfony",
-    "description": "Gember MessageBus (gember/event-sourcing) implementation based on symfony/messenger",
+    "description": "Gember Event Sourcing Message Bus adapter based on symfony/messenger",
     "license": "MIT",
     "type": "library",
     "keywords": [
