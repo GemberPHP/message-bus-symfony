@@ -1,4 +1,7 @@
 # 🫚 Gember Message Bus: Symfony Messenger
+[![Build Status](https://scrutinizer-ci.com/g/GemberPHP/message-bus-symfony/badges/build.png?b=main)](https://github.com/GemberPHP/message-bus-symfony/actions)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GemberPHP/message-bus-symfony.svg?style=flat)](https://scrutinizer-ci.com/g/GemberPHP/message-bus-symfony/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/GemberPHP/message-bus-symfony.svg?style=flat)](https://scrutinizer-ci.com/g/GemberPHP/message-bus-symfony)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/php-%5E8.3-8892BF.svg?style=flat)](http://www.php.net)
 
