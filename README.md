@@ -45,7 +45,7 @@ With this bundle, the adapter is automatically set as the default for Event Bus.
 If you're not using the bundle, you can bind it directly to the `EventBus` interface.
 
 ```yaml
-Gember\EventSourcing\Util\Messaging\MessageBus\EventBus:
+Gember\DependencyContracts\Util\Messaging\MessageBus\EventBus:
   class: Gember\MessageBusSymfony\SymfonyEventBus
   arguments:
     - '@event.bus' # or any other defined Symfony event bus
