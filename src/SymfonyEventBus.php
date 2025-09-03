@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Gember\MessageBusSymfony;
 
-use Gember\EventSourcing\Util\Messaging\MessageBus\EventBus;
-use Gember\EventSourcing\Util\Messaging\MessageBus\HandlingMessageFailedException;
+use Gember\DependencyContracts\Util\Messaging\MessageBus\EventBus;
+use Gember\DependencyContracts\Util\Messaging\MessageBus\HandlingMessageFailedException;
 use Symfony\Component\Messenger\Exception\ExceptionInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Override;

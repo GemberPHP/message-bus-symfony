@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Gember\MessageBusSymfony\Test;
 
-use Gember\EventSourcing\Util\Messaging\MessageBus\HandlingMessageFailedException;
+use Gember\DependencyContracts\Util\Messaging\MessageBus\HandlingMessageFailedException;
 use Gember\MessageBusSymfony\SymfonyEventBus;
 use Gember\MessageBusSymfony\Test\TestDoubles\TestEvent;
 use Gember\MessageBusSymfony\Test\TestDoubles\TestEventThrowingException;
