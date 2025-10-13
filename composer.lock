@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "gember/dependency-contracts",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GemberPHP/dependency-contracts.git",
-                "reference": "a8aebde31bd527a66c6e656dd51b0e8d3794ecf5"
+                "reference": "dba36626a596e8ef49c1a12ed234a4c874d335b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GemberPHP/dependency-contracts/zipball/a8aebde31bd527a66c6e656dd51b0e8d3794ecf5",
-                "reference": "a8aebde31bd527a66c6e656dd51b0e8d3794ecf5",
+                "url": "https://api.github.com/repos/GemberPHP/dependency-contracts/zipball/dba36626a596e8ef49c1a12ed234a4c874d335b9",
+                "reference": "dba36626a596e8ef49c1a12ed234a4c874d335b9",
                 "shasum": ""
             },
             "require": {
@@ -58,9 +58,9 @@
             ],
             "support": {
                 "issues": "https://github.com/GemberPHP/dependency-contracts/issues",
-                "source": "https://github.com/GemberPHP/dependency-contracts/tree/0.2.0"
+                "source": "https://github.com/GemberPHP/dependency-contracts/tree/0.2.1"
             },
-            "time": "2025-10-10T06:44:36+00:00"
+            "time": "2025-10-10T07:33:21+00:00"
         },
         {
             "name": "psr/clock",
