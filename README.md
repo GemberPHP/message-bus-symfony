@@ -13,40 +13,55 @@
 ## Installation
 Install with Composer:
 ```bash
-composer gember/message-bus-symfony
+composer require gember/message-bus-symfony
 ```
 
 ## Configuration
-Bind this adapter to the `EventBus` interface in your service definitions.
+Bind `SymfonyEventBus` to the `EventBus` interface and `SymfonyCommandBus` to the `CommandBus` interface in your service definitions.
 
 ### Examples
 
 #### Vanilla PHP
 ```php
+use Gember\MessageBusSymfony\SymfonyCommandBus;
 use Gember\MessageBusSymfony\SymfonyEventBus;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 
-$finder = new SymfonyEventBus(
-    new MessageBus([ // An EventBus configuration of your choice
+$eventBus = new SymfonyEventBus(
+    new MessageBus([ // An event bus configuration of your choice
         new HandleMessageMiddleware(new HandlersLocator([
-            SomeEvent::class => [SomeEventSubscriber::class],
+            SomeEvent::class => [new SomeEventSubscriber()], // callables
             // ...
-        ])),     
-    ]), 
+        ]), allowNoHandlers: true), // events without handlers are normal
+    ]),
+);
+
+$commandBus = new SymfonyCommandBus(
+    new MessageBus([ // A command bus configuration of your choice
+        new HandleMessageMiddleware(new HandlersLocator([
+            SomeCommand::class => [new SomeCommandHandler()],
+            // ...
+        ])),
+    ]),
 );
 ```
 
 #### Symfony
 It is recommended to use the [Symfony bundle](https://github.com/GemberPHP/event-sourcing-symfony-bundle) to configure Gember Event Sourcing.
-With this bundle, the adapter is automatically set as the default for Event Bus.
+With this bundle, the adapters are automatically set as the default for the event bus and command bus.
 
-If you're not using the bundle, you can bind it directly to the `EventBus` interface.
+If you're not using the bundle, you can bind them directly to the `EventBus` and `CommandBus` interfaces.
 
 ```yaml
 Gember\DependencyContracts\Util\Messaging\MessageBus\EventBus:
   class: Gember\MessageBusSymfony\SymfonyEventBus
   arguments:
     - '@event.bus' # or any other defined Symfony event bus
+
+Gember\DependencyContracts\Util\Messaging\MessageBus\CommandBus:
+  class: Gember\MessageBusSymfony\SymfonyCommandBus
+  arguments:
+    - '@command.bus' # or any other defined Symfony command bus
 ```
